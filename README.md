@@ -20,6 +20,10 @@ App development and testing was done primarily in Ubuntu 20.04/18.04 using the B
 This document will be broken down into each portion of the traditional ETL model in seperate sections.
 
 ***
+Here is an overview of the workflow.
+
+![](workflow_summary.JPG)
+
 
 ### Extract
 
