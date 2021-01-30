@@ -68,30 +68,13 @@ pipenv run jupyter notebook
 
 *The output will be a SQLite database (or flatfile if user chooses to) to be loaded into analysis notebook: MotifVisualizationR.ipynb* 
 
- 
-two disease_stage groups to compare
-### Transform
+ ## Run Data Analysis Notebook (L in ETL)
+ - Open MotifVisualizationR.ipynb from the open Jupyter Notebook server webpage
+ - Adjust value in cell 4 to select the length of junction_aa for motif visualization and hypothesis testing.
+ - Run all notebook cells by seleting from Cell menu "Run All"
+ - HTML output can be downloaded by selecting File -> Download as -> HTML
 
-For our methodology around Transforming, filtering, and converting the data we used a Jupyter Notebook.  This Notebook is meant to be run in full after entering the parameters.  An easy way to do this is by clicking the "Fast Forward" button at the top of the page.
 
-**Data Filtering and Conversion Notebook**
 
-The primary function of this notebook is to filter and clean the data generated in the "Extract" step.
-
-This Notebook is meant to be usable by someone with little to no coding knowledge - but still needs to do specialized data processing.
-
-After loading the needed libraries the user will add the path to their SQLite DB so the Notebook can create a connection to it.
-
-Once the SQLite connection instance has been generated the user has the option for generating custom SQL Queries.
-
-***A user well versed in writing SQL queries can create many different types of Queries and Constraints that can generate highly specific datasets to suit their needs..
-
-Users have the option of exporting the newly cleaned data into either a CSV or another SQLite DB.  Simply comment out the type of file you do NOT want to get and state a path for it to be written to.
-
-***If you so choose, the queries can be piped to the dataoutput of the notebook and used in multiple ways.
-
-Once all query parameters are in place you can simply run the entire notebook by using the "Fast Forward" button at the time.  This restarts the python kernel and runs the entire notebook.
-
-***Pleae make certain that you have ample storage and memory resources if the inbound DB is large and the queries complex.
-
+![](baseline_vs_acute.JPG)
 
