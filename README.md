@@ -24,12 +24,16 @@ App development and testing was done primarily in Ubuntu 20.04/18.04.
 
 ### Install ubuntu dependencies:
 ```sh
-sudo apt install -y  curl sqlite3 pipenv jupyter-client libcurl4-gnutls-dev libgsl-dev libgsl23 libsodium23 libssl-dev libxml2-dev nodejs npm python3-nacl python3-pymacaroons r-base-core libcurl4-openssl-dev 
+sudo apt install -y  curl sqlite3 pipenv jupyter-client r-base-core 
+
+libcurl4-gnutls-dev libgsl-dev libgsl23 libsodium23 libssl-dev libxml2-dev nodejs npm python3-nacl python3-pymacaroons libcurl4-openssl-dev 
 ```
 
 ### Install R packages
 ```R
-install.packages(c("IRkernel", "data.table", "RSQLite", "sqldf", "BiocManager"))
+install.packages(c("IRkernel", "data.table", "RSQLite", "sqldf", "BiocManager")) 
+yes
+yes
 library(IRkernel)
 IRkernel::install_spec()
 library(BiocManager)
@@ -52,12 +56,20 @@ sh ./create_sqlitedb.sh ./seqtable_test.tsv ./metadata_test.tsv
 ### Activating python virtual environment to launch juypyter notebook
 ```sh
 cd ../
-jupyter notebook
+pipenv install
+pipenv run jupyter notebook
 ```
 
 ## Run Data Cleaning and Filtering Notebook (T in ETL)
+- Open sqlite_df_fn3.ipynb
+- Adjust values in cells 4-5 to select two disease_stage groups (e.g. "Recovered" and "Baseline" or "Baseline" and "Acute")
+- Adjust value in cell 6 for the number of records queried ( ~1000000 records per subject on average)
+- Run all notebook cells by seleting from Cell menu "Run All"
 
+*The output will be a SQLite database (or flatfile if user chooses to) to be loaded into analysis notebook: MotifVisualizationR.ipynb* 
 
+ 
+two disease_stage groups to compare
 ### Transform
 
 For our methodology around Transforming, filtering, and converting the data we used a Jupyter Notebook.  This Notebook is meant to be run in full after entering the parameters.  An easy way to do this is by clicking the "Fast Forward" button at the top of the page.
