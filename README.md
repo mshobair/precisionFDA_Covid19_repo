@@ -1,6 +1,5 @@
 # precisionFDA_Covid19_repo
 
-# precisionFDA_Covid19
 Data mining of clinical associations from bioinformatics analysis of immunological data 
 
 By Dr. Mahmoud Shobair and Gerald Parker
@@ -10,12 +9,8 @@ By Dr. Mahmoud Shobair and Gerald Parker
 The tool which we have created is designed to handle these functions:
 
 - Takes data from supplied CSV and converts into a SQLite DB
-- Takes the SQLite DB and allows a user to extract, clean, and customize relevant data for which they would like to use into a CSV or SQLite DB.
-- Allows the user to do a test load of the data to validate the integrity of the data which was just exported.
-
-> Gerald Finish this phrasing: It is our desire that this tool can help you to generate the specific datasets you need to further analyze data and 
-
-App development and testing was done primarily in Ubuntu 20.04/18.04 using the Base Desktop install plus and dependancies that will be listed.
+- Takes the SQLite DB and allows the user to clean ahd select relevant data for hypothesis testing to use into a CSV or SQLite DB.
+- Allows the user to load the transformed data to perform exploratory data analysis (EDA). An example use case of data visualization is presented in an R-notebook comparing protein sequence data between subjects grouped by disease_stage clinical variable.
 
 This document will be broken down into each portion of the traditional ETL model in seperate sections.
 
@@ -24,6 +19,13 @@ Here is an overview of the workflow.
 
 ![](workflow_summary.JPG)
 
+### Installing the pipeline on Ubuntu
+App development and testing was done primarily in Ubuntu 20.04/18.04.
+## Install ubuntu dependencies:
+```sh
+sudo apt install -y sqlite3 jupyter-client pipenv jupyter-client libcurl4-gnutls-dev libgit2-dev libgsl-dev libgsl23 libsodium23 libssl-dev libxml2-dev nodejs npm pipenv python3-nacl python3-pymacaroons r-base-core sqlite3 git libcurl4-openssl-dev
+
+```
 
 ### Extract
 
