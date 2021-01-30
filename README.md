@@ -25,8 +25,7 @@ App development and testing was done primarily in Ubuntu 20.04/18.04.
 ### Install ubuntu dependencies:
 ```sh
 sudo apt install -y  curl sqlite3 pipenv jupyter-client r-base-core 
-
-libcurl4-gnutls-dev libgsl-dev libgsl23 libsodium23 libssl-dev libxml2-dev nodejs npm python3-nacl python3-pymacaroons libcurl4-openssl-dev 
+ 
 ```
 
 ### Install R packages
@@ -35,7 +34,7 @@ install.packages(c("IRkernel", "data.table", "RSQLite", "sqldf", "BiocManager"))
 yes
 yes
 library(IRkernel)
-IRkernel::install_spec()
+IRkernel::installspec()
 library(BiocManager)
 BiocManager::install("universalmotif")
 ```
