@@ -19,18 +19,18 @@ Here is an overview of the workflow.
 
 ![](workflow_summary.JPG)
 
-### Installing the dependencies
+## Setting up dependencies and virtual environment
 App development and testing was done primarily in Ubuntu 20.04/18.04.
 
-## Install ubuntu dependencies:
+### Install ubuntu dependencies:
 ```sh
-sudo apt install -y sqlite3 pipenv jupyter-client libcurl4-gnutls-dev libgsl-dev libgsl23 libsodium23 libssl-dev libxml2-dev nodejs npm python3-nacl python3-pymacaroons r-base-core sqlite3 libcurl4-openssl-dev curl
+sudo apt install -y  curl sqlite3 pipenv jupyter-client libcurl4-gnutls-dev libgsl-dev libgsl23 libsodium23 libssl-dev libxml2-dev nodejs npm python3-nacl python3-pymacaroons r-base-core libcurl4-openssl-dev 
 ```
-## Activate virtual environment using pipenv
+### Activate virtual environment using pipenv
 ```sh
 pipenv install
 ```
-## Install R packages
+### Install R packages
 ```R
 install.packages(c("IRkernel", "data.table", "RSQLite", "sqldf", "BiocManager"))
 library(IRkernel)
@@ -38,8 +38,20 @@ IRkernel::install_spec()
 library(BiocManager)
 BiocManager::install("universalmotif")
 ```
-### Download the zipped repo source code 
+### Download, extract the zipped repo source to activate the virtual environment 
+```sh
+curl -L -O https://github.com/mshobair/precisionFDA_Covid19_repo/archive/main.zip
+unzip main.zip -d .
+cd precisionFDA_Covid19_repo
+pipenv install
+```
 
+## Creating and indexing SQLite database
+```sh
+cd extract_to_sql/
+# change input tables to their local paths
+sh ./create_sqlitedb.sh ./seqtable_test.tsv ./metadata_test.tsv
+```
 
 ### Activating python virtual environment to launch juypyter notebook
 ```sh
