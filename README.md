@@ -26,10 +26,7 @@ App development and testing was done primarily in Ubuntu 20.04/18.04.
 ```sh
 sudo apt install -y  curl sqlite3 pipenv jupyter-client libcurl4-gnutls-dev libgsl-dev libgsl23 libsodium23 libssl-dev libxml2-dev nodejs npm python3-nacl python3-pymacaroons r-base-core libcurl4-openssl-dev 
 ```
-### Activate virtual environment using pipenv
-```sh
-pipenv install
-```
+
 ### Install R packages
 ```R
 install.packages(c("IRkernel", "data.table", "RSQLite", "sqldf", "BiocManager"))
@@ -38,61 +35,28 @@ IRkernel::install_spec()
 library(BiocManager)
 BiocManager::install("universalmotif")
 ```
-### Download, extract the zipped repo source to activate the virtual environment 
+### Download, extract the zipped repo source 
 ```sh
 curl -L -O https://github.com/mshobair/precisionFDA_Covid19_repo/archive/main.zip
 unzip main.zip -d .
 cd precisionFDA_Covid19_repo
-pipenv install
 ```
 
-## Creating and indexing SQLite database
+## Creating and indexing SQLite database (E in ETL)
 ```sh
 cd extract_to_sql/
-# change input tables to their local paths
+# change input table paths to their local paths
 sh ./create_sqlitedb.sh ./seqtable_test.tsv ./metadata_test.tsv
 ```
 
 ### Activating python virtual environment to launch juypyter notebook
 ```sh
-pipenv install
+cd ../
+jupyter notebook
+```
 
-### Extract
+## Run Data Cleaning and Filtering Notebook (T in ETL)
 
-The extraction and staging of the data is done using a shell script that takes the CSV/TSV formatted data and exports it into a SQLite staging database.
-
-Outlined below is the shell script and it's functionality.
-
-**Generates a new SQLite DB file with the name "test.db" within the directory which the script is run.**
-
-sqlite3 ./test.db << EOF
-
-*This can be edited to place the database wherever you have the storage.*
-
-**This stage takes the input files, creates tables within the DB, and then exports the data into those tables from the different inputs.**
-
-.mode tabs ;
-.import "./seqtable_test.tsv" seqtable
-.import "./metadata_test.tsv" metadata_table
-
-*In this example the input files were TSV - but many other flat file formats can be used as a data source.*
-
-**This stage declares the columns and indices for the table labeled 'seqtable'.**
-column
-CREATE INDEX seq_ind ON seqtable(sample_processing_id);
-CREATE INDEX jun_aa_len ON seqtable(junction_aa_length);
-
-*The names in this example are used to reflect the types of data we will be working with.
-
-**This stage declares the columes and indices for the table labeled 'metadata_table'**
-CREATE INDEX meta_ind ON metadata_table(sample_processing_id,subject_id,
-sex, disease_diagnosis, disease_stage, intervention);
-
-*As before - the names in this example are used to reflect the types of data we will be working with
-
-***This script is designed to be easily readable and editable to better customize your staging database's format.
-
-***
 
 ### Transform
 
