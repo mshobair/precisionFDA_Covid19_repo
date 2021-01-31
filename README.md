@@ -47,8 +47,9 @@ curl -L -O https://github.com/mshobair/precisionFDA_Covid19_repo/archive/main.zi
 unzip main.zip -d .
 cd precisionFDA_Covid19_repo
 ```
-
+<!-- GP - Edited to clarify script can be edited to point to one's own dataset but that this will just work without an edit -->
 ## Creating and indexing SQLite database (E in ETL)
+This script can  be edited to point to your own datafile but can be ran as is with the demonstration data.
 ```sh
 cd extract_to_sql/
 # change input table paths to their local paths
