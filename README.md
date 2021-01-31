@@ -55,8 +55,9 @@ cd extract_to_sql/
 # change input table paths to their local paths
 sh ./create_sqlitedb.sh ./seqtable_test.tsv ./metadata_test.tsv
 ```
-
+<!-- GP - Edited to state Pipfile issue that comes up between differing versions of Python -->
 ### Activating python virtual environment to launch juypyter notebook
+You will need to edit the Pipfile with the version of Python in use before running.
 ```sh
 cd ../
 pipenv install
