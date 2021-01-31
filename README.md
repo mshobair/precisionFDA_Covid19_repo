@@ -25,14 +25,14 @@ App development and testing was done primarily in Ubuntu 20.04/18.04.
 <!-- GP - Edited to remove unneeded dependencies -->
 ### Install ubuntu dependencies:
 ```sh
-sudo apt install -y curl sqlite3 pipenv jupyter-client r-base-core libgsl-dev libcurl4-openssl-dev
+sudo apt install -y curl sqlite3 pipenv jupyter-client r-base-core libgsl-dev libcurl4-openssl-dev git
 
 ```
 <!-- GP - Edited to add "R" and further show what to do when done with step-->
 ### Install R packages
 ```R
 R (opens R environment)
-install.packages(c("IRkernel", "data.table", "RSQLite", "sqldf", "BiocManager")) 
+install.packages(c("IRkernel", "data.table", "RSQLite", "sqldf", "BiocManager", "yaml")) 
 (Answer "yes" twice)
 library(IRkernel)
 IRkernel::installspec()
@@ -43,9 +43,9 @@ BiocManager::install("universalmotif")
 ```
 
 ### Download, extract the zipped repo source 
+Make certain you are not in "/" when running this.
 ```sh
-curl -L -O https://github.com/mshobair/precisionFDA_Covid19_repo/archive/main.zip
-unzip main.zip -d .
+git clone --branch papermill https://github.com/mshobair/precisionFDA_Covid19_repo.git 
 cd precisionFDA_Covid19_repo
 ```
 <!-- GP - Edited to clarify script can be edited to point to one's own dataset but that this will just work without an edit -->
@@ -66,7 +66,10 @@ pipenv run jupyter notebook
 ```
 <!-- GP - Edited to clarify information in the parentheses pertains to the demonstration data -->
 ## Run Data Cleaning and Filtering Notebook (T in ETL)
-- Open sqlite_df_fn3.ipynb
+- Open sql_to_csv_all_subject.ipynb
+- Change path to point to the SQLite DB
+- Open papermill.ipynb
+
 - Adjust values in cells 4-5 to select two disease_stage groups (e.g. "Recovered" and "Baseline" or "Baseline" and "Acute")
 - Adjust value in cell 6 for the number of records queried ( ~1000000 records per subject on average)
 - Run all notebook cells by seleting from Cell menu "Run All"
