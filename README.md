@@ -63,7 +63,7 @@ cd ../
 pipenv install
 pipenv run jupyter notebook
 ```
-
+<!-- GP - Edited to clarify information in the parentheses pertains to the demonstration data -->
 ## Run Data Cleaning and Filtering Notebook (T in ETL)
 - Open sqlite_df_fn3.ipynb
 - Adjust values in cells 4-5 to select two disease_stage groups (e.g. "Recovered" and "Baseline" or "Baseline" and "Acute")
