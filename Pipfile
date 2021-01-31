@@ -6,17 +6,14 @@ name = "pypi"
 [packages]
 jupyter = "*"
 notebook = "*"
-sqlalchemy = "*"
-ipython-sql = "*"
-ipykernel = "*"
 pandas = "*"
-#nbimporter = "*"
-ipynb = "*"
-importlib = "*"
-rpy2 = "*"
-ipywidgets = "*"
+sqlalchemy = "*"
+papermill = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
