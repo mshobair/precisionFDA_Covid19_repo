@@ -81,5 +81,5 @@ pipenv run jupyter notebook
 
 
 
-![](baseline_vs_acute.JPG)
+![](ETL_ workflow.JPG)
 
