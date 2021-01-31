@@ -38,6 +38,8 @@ library(IRkernel)
 IRkernel::installspec()
 library(BiocManager)
 BiocManager::install("universalmotif")
+BiocManager::install("MotifDb")
+
 (Ctrl + D to Exit Environment)
 (Answer "No" to saving workspace)
 ```
