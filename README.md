@@ -70,7 +70,7 @@ pipenv run jupyter notebook
 - Adjust value in cell 6 for the number of records queried ( ~1000000 records per subject on average)
 - Run all notebook cells by seleting from Cell menu "Run All"
 
-*The output will be a SQLite database (or flatfile if user chooses to) to be loaded into analysis notebook: MotifVisualizationR.ipynb* 
+*The output will be a SQLite database (or flatfile if user so chooses) to be loaded into analysis notebook: MotifVisualizationR.ipynb* 
 
  ## Run Data Analysis Notebook (L in ETL)
  - Open MotifVisualizationR.ipynb from the open Jupyter Notebook server webpage
