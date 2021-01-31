@@ -30,6 +30,7 @@ sudo apt install -y  curl sqlite3 pipenv jupyter-client r-base-core
 
 ### Install R packages
 ```R
+sudo R
 install.packages(c("IRkernel", "data.table", "RSQLite", "sqldf", "BiocManager")) 
 yes
 yes
