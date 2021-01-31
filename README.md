@@ -28,7 +28,7 @@ App development and testing was done primarily in Ubuntu 20.04/18.04.
 sudo apt install -y  curl sqlite3 pipenv jupyter-client r-base-core 
  
 ```
-<!-- GP - Edited to add "sudo R" and remove the "yes" responses -->
+<!-- GP - Edited to add "sudo R" and remove the "yes" responses and clarify the need to exit the R environment after install -->
 ### Install R packages
 ```R
 sudo R
@@ -37,7 +37,10 @@ library(IRkernel)
 IRkernel::installspec()
 library(BiocManager)
 BiocManager::install("universalmotif")
+Ctrl + D to Exit Environment
+Answer "No" to saving workspace
 ```
+
 ### Download, extract the zipped repo source 
 ```sh
 curl -L -O https://github.com/mshobair/precisionFDA_Covid19_repo/archive/main.zip
