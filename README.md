@@ -25,7 +25,7 @@ App development and testing was done primarily in Ubuntu 20.04/18.04.
 <!-- GP - Edited to remove unneeded dependencies -->
 ### Install ubuntu dependencies:
 ```sh
-sudo apt install -y curl sqlite3 pipenv jupyter-client r-base-core libgsl-dev libcurl4-openssl-dev git
+sudo apt install -y curl sqlite3 pipenv jupyter-client r-base-core libgsl-dev libcurl4-openssl-dev git libxml2-dev
 
 ```
 <!-- GP - Edited to add "R" and further show what to do when done with step-->
