@@ -51,7 +51,8 @@ git clone --branch papermill https://github.com/mshobair/precisionFDA_Covid19_re
 cd precisionFDA_Covid19_repo
 ```
 <!-- GP - Edited to clarify script can be edited to point to one's own dataset but that this will just work without an edit -->
-## Creating and indexing SQLite database (E in ETL)
+## Creating and indexing SQLite database (E in ETL)##
+*We have limited the scope of this activity to the junction_aa data type as this query is designed for a specific use case.  The script is easily adapted for different use cases - but we have elected not to grant too much leeway with this demonstration 
 This script can  be edited to point to your own datafile but can be ran as is with the demonstration data.
 ```sh
 cd extract_to_sql/
