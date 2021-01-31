@@ -67,8 +67,12 @@ pipenv run jupyter notebook
 <!-- GP - Edited to clarify information in the parentheses pertains to the demonstration data -->
 ## Run Data Cleaning and Filtering Notebook (T in ETL)
 - Open sql_to_csv_all_subject.ipynb
-- Change path to point to the SQLite DB
+ - In cell 4, change path of SQLite database file to point to the local path
+ - In cell 6, change path of metadata.csv to point to local path
 - Open papermill.ipynb
+ - Click the fast forward button (kernal restart and run all cells)
+ - This will generate a junction_aa motif matrix for each record of subject_id
+ *( In the output directory)
 
 - Adjust values in cells 4-5 to select two disease_stage groups (e.g. "Recovered" and "Baseline" or "Baseline" and "Acute")
 - Adjust value in cell 6 for the number of records queried ( ~1000000 records per subject on average)
