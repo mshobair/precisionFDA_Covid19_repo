@@ -17,7 +17,7 @@ This document will be broken down into each portion of the traditional ETL model
 ***
 Here is an overview of the workflow.
 
-![](ETL_workflow.png)
+![](ETL_workflow.png.tiff)
 
 ## Setting up dependencies and virtual environment
 App development and testing was done primarily in Ubuntu 20.04/18.04.
