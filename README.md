@@ -22,18 +22,17 @@ Here is an overview of the workflow.
 ## Setting up dependencies and virtual environment
 App development and testing was done primarily in Ubuntu 20.04/18.04.
 
+<!-- GP - Edited to remove unneeded dependencies -->
 ### Install ubuntu dependencies:
 ```sh
 sudo apt install -y  curl sqlite3 pipenv jupyter-client r-base-core 
  
 ```
-
+<!-- GP - Edited to add "sudo R" and remove the "yes" responses -->
 ### Install R packages
 ```R
 sudo R
 install.packages(c("IRkernel", "data.table", "RSQLite", "sqldf", "BiocManager")) 
-yes
-yes
 library(IRkernel)
 IRkernel::installspec()
 library(BiocManager)
