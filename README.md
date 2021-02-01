@@ -5,14 +5,22 @@ Data mining of clinical associations from bioinformatics analysis of immunologic
 By Dr. Mahmoud Shobair and Gerald Parker
 
 ***
+When scoping for this project we wanted to make this as flexible, extensible, and modular as possible while still fulfilling the requirements of the challenge.  This caused us to create more of an ETL/EDA hybrid solution which can be used both to manage, clean, and manipulate data as well as run exploratory queries and calculations while creating visualizations which refer to said queries and calculations.
 
-The tool which we have created is designed to handle these functions:
+***
 
-- Takes data from supplied CSV and converts into a SQLite DB
-- Takes the SQLite DB and allows the user to clean ahd select relevant data for hypothesis testing to use into a CSV or SQLite DB.
-- Allows the user to load the transformed data to perform exploratory data analysis (EDA). An example use case of data visualization is presented in an R-notebook comparing protein sequence data between subjects grouped by disease_stage clinical variable.
+Our primary goals for this competition:
 
-This document will be broken down into each portion of the traditional ETL model in seperate sections.
+  - Create a standardizable ETL/EDA framework using readily available toolsets
+    - The thought is that with standardization comes regularity in the ETL/EDA processes across various disciplines  
+  - Create modularity between each stage of any and all ETL/EDA modules within the framework
+    - This allows us to easily modify the data pipeline at any point in the chain
+    - This flexibility enables users to adapt this framework for many different types of data management/analysis use cases
+  - Generate a real-world use within this flexible framework that shows off the modularity and flexibility
+    - We used the provided data and stayed within the context of the Challenge.
+    - Creating an easily reproducible way of collapsing large datasets
+    - Begin exploring the identification of associations within the provided dataset
+    - Show examples of the explored associations using visualizations and showing the logic behind how these associations/visualizations were generated
 
 ***
 Here is an overview of the workflow.
