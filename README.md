@@ -55,7 +55,7 @@ BiocManager::install("MotifDb")
 ### Download, extract the zipped repo source 
 Make certain you are not in "/" when running this.
 ```sh
-git clone --branch papermill https://github.com/mshobair/precisionFDA_Covid19_repo.git 
+git clone --branch datapipeline https://github.com/mshobair/precisionFDA_Covid19_repo.git 
 cd precisionFDA_Covid19_repo
 ```
 <!-- GP - Edited to clarify script can be edited to point to one's own dataset but that this will just work without an edit -->
