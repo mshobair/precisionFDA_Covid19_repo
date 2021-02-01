@@ -51,8 +51,11 @@ git clone --branch papermill https://github.com/mshobair/precisionFDA_Covid19_re
 cd precisionFDA_Covid19_repo
 ```
 <!-- GP - Edited to clarify script can be edited to point to one's own dataset but that this will just work without an edit -->
+
+If you are interested in end-to-end pipelining of your data, then start by following the Extraction step. Otherwise, the data visualization module can be investigated using processed sequence motif data in the "output" folder.
 ## Creating and indexing SQLite database (E in ETL)
-This script can  be edited to point to your own datafile but can be ran as is with the demonstration data.
+This script can  be edited to point to your own datafile but can be run as is with the demonstration data. 
+Indexing can take time, however the queries are very fast with minor optimizations.
 ```sh
 cd extract_to_sql/
 # change input table paths to their local paths
@@ -67,24 +70,22 @@ pipenv install
 pipenv run jupyter notebook
 ```
 <!-- GP - Edited to clarify information in the parentheses pertains to the demonstration data -->
-## Run Data Cleaning and Filtering Notebook (T in ETL)
-- Open sql_to_csv_all_subject.ipynb
+## Run data  quereing, cleaning and segmenting notebooks (T in ETL)
+### Quering
+- Open "notebooks/sql_to_csv_all_subject.ipynb"
  - In cell 4, change path of SQLite database file to point to the local path
  - In cell 6, change path of metadata.csv to point to local path
+
 - Open papermill.ipynb
+ - Adjust the first line of the second cell ....(N, 0, -1) to select the first N subject_ids
  - Click the fast forward button (kernal restart and run all cells)
- - This will generate a junction_aa motif matrix for each record of subject_id
- *( In the output directory)
+ - This will generate a junction_aa motif matrix for each record of subject_id using the "csv_to_matrix.ipynb"
+ *( In the output directory; this will take time as it is CPU-bound)
+ Processed motif data is available in the output folder for Exploratory Data Analysis (EDA)
 
-- Adjust values in cells 4-5 to select two disease_stage groups (e.g. "Recovered" and "Baseline" or "Baseline" and "Acute")
-- Adjust value in cell 6 for the number of records queried ( ~1000000 records per subject on average)
-- Run all notebook cells by seleting from Cell menu "Run All"
-
-*The output will be a SQLite database (or flatfile if user so chooses) to be loaded into analysis notebook: MotifVisualizationR.ipynb* 
-
- ## Run Data Analysis Notebook (L in ETL)
- - Open MotifVisualizationR.ipynb from the open Jupyter Notebook server webpage
- - Adjust value in cell 4 to select the length of junction_aa for motif visualization and hypothesis testing.
+ ## Run data loading and analysis Notebook (L in ETL)
+ - Open "matrix_to_motif_viz.ipynb" from the open Jupyter Notebook server webpage
+ - Adjust value (200) in cell 4 to select the number of subject_ids for motif visualization and hypothesis testing
  - Run all notebook cells by seleting from Cell menu "Run All"
  - HTML output can be downloaded by selecting File -> Download as -> HTML
 
