@@ -19,7 +19,7 @@ Our primary goals for this competition:
   - Generate a real-world use within this flexible framework that shows off the modularity and flexibility
     - We used the provided data and stayed within the context of the Challenge.
     - Creating an easily reproducible way of collapsing large datasets
-    - Begin exploring the identification of associations within the provided dataset
+    - Begin exploring the identification of associations within the provided dataset between clinical factors and adaptive immunological features
     - Show examples of the explored associations using visualizations and showing the logic behind how these associations/visualizations were generated
 
 ***
