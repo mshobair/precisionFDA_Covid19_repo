@@ -93,7 +93,7 @@ pipenv run jupyter notebook
 
 **Due to the single threaded nature of running within a non-parallelized Python/R environment (Jupyter Notebook) some modules can become CPU bound.  It is anticipated that we would spread the modules out to separate containers/nodes in order to improve overall performance.** 
  ### Run data loading and analysis Notebook (L in ETL)
- - Open "matrix_to_motif_viz.ipynb" from the open Jupyter Notebook server webpage
+ - Open "matrix_to_motif_viz_association.ipynb" from the open Jupyter Notebook server webpage
  - Adjust value (200) in cell 4 to select the number of subject_ids for motif visualization and hypothesis testing
  - Run all notebook cells by seleting from Cell menu "Run All"
  - HTML output can be downloaded by selecting File -> Download as -> HTML
