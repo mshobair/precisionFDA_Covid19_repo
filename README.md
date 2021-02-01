@@ -83,7 +83,7 @@ pipenv run jupyter notebook
 - Open "notebooks/sql_to_csv_all_subject.ipynb"
  - In cell 4, change path of SQLite database file to point to the local path
  - In cell 6, change path of metadata.csv to point to local path
-
+### Papermill pipeline
 - Open papermill.ipynb
  - Adjust the first line of the second cell ....(N, 0, -1) to select the first N subject_ids
  - Click the fast forward button (kernal restart and run all cells)
@@ -91,7 +91,8 @@ pipenv run jupyter notebook
  *( In the output directory; this will take time as it is CPU-bound)
  Processed motif data is available in the output folder for Exploratory Data Analysis (EDA)
 
- ## Run data loading and analysis Notebook (L in ETL)
+**Due to the single threaded nature of running within a non-parallelized Python/R environment (Jupyter Notebook) some modules can become CPU bound.  It is anticipated that we would spread the modules out to separate containers/nodes in order to improve overall performance.** 
+ ### Run data loading and analysis Notebook (L in ETL)
  - Open "matrix_to_motif_viz.ipynb" from the open Jupyter Notebook server webpage
  - Adjust value (200) in cell 4 to select the number of subject_ids for motif visualization and hypothesis testing
  - Run all notebook cells by seleting from Cell menu "Run All"
